@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20130928092240) do
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
     t.string   "name"
+    t.integer  "role"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "time_zone"
