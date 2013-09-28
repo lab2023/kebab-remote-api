@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
 		 :token_authenticatable
 
-  enumerize :role, in: { user: 1, editor: 2 }, scope: true
+  enumerize :role, in: { editor: 1 }, scope: true
+  enumerize :block_status, in: { unblocked: 1, blocked: 2 }, scope: true, default: :unblocked
 
   # Example creation of User with role
   # new_user = User.create(email: 'blabla@bla.com', password: '12345678', role: :user)
