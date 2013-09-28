@@ -12,6 +12,10 @@ KebabRemoteApi::Application.routes.draw do
     namespace :v1 do
       resources :sessions, only: [:create, :destroy], defaults: { format: 'json' }
     end
+
+    namespace :v2 do
+      resources :users, only: [:index], defaults: { format: 'json' }
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
