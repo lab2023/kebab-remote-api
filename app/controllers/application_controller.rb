@@ -2,7 +2,11 @@ require 'application_responder'
 
 class ApplicationController < ActionController::Base
   before_filter :set_user_time_zone
+  before_filter :restrict_access, only: [:get_server_info]
 
+  def get_server_info
+
+  end
 
   self.responder = ApplicationResponder
   respond_to :html, :json
@@ -33,5 +37,10 @@ class ApplicationController < ActionController::Base
     else
       hq_dashboard_index_path
     end
+  end
+
+  def restrict_access
+    api_key = ApiKey.find_by_access_token(params[:access_token])
+    head :unauthorized unless api_key
   end
 end
