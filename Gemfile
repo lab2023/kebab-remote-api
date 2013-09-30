@@ -23,7 +23,7 @@ gem 'will-paginate-i18n', '~> 0.1.13'
 gem 'paperclip', '~> 3.5.1'
 gem 'kangal', '~> 0.1.2'
 gem 'enumerize', '~> 0.7.0'
-gem 'sys-log', '~> 0.7.1'
+gem 'sys-cpu', '~> 0.7.1'
 
 group :doc do
   gem 'sdoc', require: false
