@@ -1,8 +1,31 @@
 require 'application_responder'
+require 'vmstat'
 
 class ApplicationController < ActionController::Base
   before_filter :set_user_time_zone
+  before_filter :restrict_access, only: [:get_server_info]
 
+  def get_server_info
+    mem = Vmstat.memory
+    total_mem = mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes
+    # Getting disk info for main partition is, temprorarily, for only
+    # UN*X-like systems, such as GNU/Linux, BSD, Mac OS X etc.
+    # Windows implementation will be added in future 
+    disk = Vmstat.disk('/')
+
+    render status: 200, json: {
+      "CPU" => Vmstat.load_average.five_minutes,
+      "Memory" => {
+        "Total" => total_mem / 1024**2,
+        "Used" => (total_mem - mem.free_bytes) / 1024**2
+      },
+      "Disk" => {
+        "Total" => disk.total_bytes / 1024**2,
+        "Used" => (disk.total_bytes - disk.free_bytes) / 1024**2
+      },
+      "Uptime" => (Time.now - Vmstat.boot_time).to_i / 60
+    }
+  end
 
   self.responder = ApplicationResponder
   respond_to :html, :json
@@ -33,5 +56,10 @@ class ApplicationController < ActionController::Base
     else
       hq_dashboard_index_path
     end
+  end
+
+  def restrict_access
+    api_key = ApiKey.find_by_access_token(params[:access_token])
+    head :unauthorized unless api_key
   end
 end
