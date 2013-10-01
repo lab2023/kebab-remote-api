@@ -1,14 +1,20 @@
 require 'application_responder'
-require 'sys/cpu'
-include Sys
+require 'vmstat'
 
 class ApplicationController < ActionController::Base
   before_filter :set_user_time_zone
   before_filter :restrict_access, only: [:get_server_info]
 
   def get_server_info
+    mem = Vmstat.memory
+
     render status: 200, json: {
-      "CPU" => "#{(CPU.load_avg[1] * 100).to_i}"
+      "CPU" => Vmstat.load_average.five_minutes,
+      "Memory" => {
+        "Total" => (mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes) / 1024**2,
+        "Free" => mem.free_bytes / 1024**2
+      },
+      "Uptime" => (Time.now - Vmstat.boot_time).to_i / 60
     }
   end
 
