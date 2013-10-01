@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   def get_server_info
     mem = Vmstat.memory
+    total_mem = mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes
     # Getting disk info for main partition is, temprorarily, for only
     # UN*X-like systems, such as GNU/Linux, BSD, Mac OS X etc.
     # Windows implementation will be added in future 
@@ -15,12 +16,12 @@ class ApplicationController < ActionController::Base
     render status: 200, json: {
       "CPU" => Vmstat.load_average.five_minutes,
       "Memory" => {
-        "Total" => (mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes) / 1024**2,
-        "Free" => mem.free_bytes / 1024**2
+        "Total" => total_mem / 1024**2,
+        "Used" => (total_mem - mem.free_bytes) / 1024**2
       },
       "Disk" => {
         "Total" => disk.total_bytes / 1024**2,
-        "Free" => disk.free_bytes / 1024**2
+        "Used" => (disk.total_bytes - disk.free_bytes) / 1024**2
       },
       "Uptime" => (Time.now - Vmstat.boot_time).to_i / 60
     }
