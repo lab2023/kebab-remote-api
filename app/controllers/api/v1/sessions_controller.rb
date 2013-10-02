@@ -8,13 +8,13 @@ class Api::V1::SessionsController < ApplicationController
 
     # Checking whether format is json or not
     if request.format != :json
-      render status: 406, json: { message: 'The request must be json'}
+      render status: 406, json: { message: t(:not_json) }
       return
     end
 
     # Checking for empty email or password
     if email.nil? or password.nil?
-      render status: 400, json: { message: 'The request must contain the user email and password' }
+      render status: 400, json: { message: t(:empty_input) }
       return
     end
 
@@ -22,7 +22,7 @@ class Api::V1::SessionsController < ApplicationController
 
     # Checking whether user exists
     if @user.nil?
-      render status: 401, json: { message: 'Invalid email or password' }
+      render status: 401, json: { message: t(:invalid_field) }
       return
     end
 
@@ -30,7 +30,7 @@ class Api::V1::SessionsController < ApplicationController
 
     # Finally, checking for password
     if not @user.valid_password?(password)
-      render status: 401, json: { message: 'Invalid email or password.'}
+      render status: 401, json: { message: t(:invalid_field) }
     else
       render status: 200, json: { 'success' => true, 
                                   'id' => @user.id, 

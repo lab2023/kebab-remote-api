@@ -22,4 +22,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 tr:
-  hello: "Merhaba Dünya"
+  not_json: 'İstek JSON tipinde olmalıdır.'
+  empty_input: 'İstek kullanıcının e-postasını ve parolasını içermelidir.'
+  invalid_field: 'Yanlış e-posta veya parola'
+
