@@ -1,0 +1,2 @@
+module ServerInfoHelper
+end
