@@ -18,7 +18,7 @@ class Api::V1::SessionsController < ApplicationController
       return
     end
 
-    @user = User.find_by_email(email.downcase)
+    @user = User.find_by_email(email: email.downcase)
 
     # Checking whether user exists
     if @user.nil?
