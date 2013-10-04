@@ -11,7 +11,7 @@ KebabRemoteApi::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :sessions, only: [:create, :destroy], defaults: { format: 'json' }
-      resources :server_info, only: [:index], defaults: { format: 'json' }
+      match 'server_info', to: 'server_info#get_server_info', via: [:get], defaults: { format: 'json' }
     end
 
     namespace :v2 do

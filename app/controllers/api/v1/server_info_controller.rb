@@ -1,10 +1,9 @@
 class Api::V1::ServerInfoController < ApplicationController
-  before_filter :restrict_access, only: [:index]
+  before_filter :restrict_access, only: [:get_server_info]
 
-  # Temporarly using index method, may change in future
-  def index
-    @info = ServerInfo.create
-    render status: 200, json: @info.as_json
+  def get_server_info
+    @info = ServerInfo.new
+    render status: 200, json: @info.as_json if @info.save
   end
 
   private
