@@ -5,17 +5,22 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
-		 :token_authenticatable
+		     :token_authenticatable
 
   enumerize :role, in: { editor: 1 }, scope: true
   enumerize :block_status, in: { unblocked: 1, blocked: 2 }, scope: true, default: :unblocked
 
   # Example creation of User with role
   # new_user = User.create(email: 'blabla@bla.com', password: '12345678', role: :user)
-
+  #
   # Checking role:
   # new_user.role.editor? (returns true or false)
-
+  #
   # Selecting all users with given role (A.K.A. scoping):
   # User.with_role(:editor)
+  def as_json
+    { 'success' => true, 'id' => self.id,
+      'auth_token' => self.authentication_token,
+      'email' => self.email }.to_json
+  end
 end

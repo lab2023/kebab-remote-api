@@ -18,7 +18,7 @@ class Api::V1::SessionsController < ApplicationController
       return
     end
 
-    @user = User.find_by_email(email: email.downcase)
+    @user = User.where(email: email.downcase).first
 
     # Checking whether user exists
     if @user.nil?
@@ -32,10 +32,7 @@ class Api::V1::SessionsController < ApplicationController
     if not @user.valid_password?(password)
       render status: 401, json: { message: t(:invalid_field) }
     else
-      render status: 200, json: { 'success' => true, 
-                                  'id' => @user.id, 
-                                  'auth_token' => @user.authentication_token, 
-                                  'email' => @user.email}.to_json
+      render status: 200, json: @user.as_json
     end
 
   end
