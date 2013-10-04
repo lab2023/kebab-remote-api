@@ -11,6 +11,7 @@ KebabRemoteApi::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :sessions, only: [:create, :destroy], defaults: { format: 'json' }
+      resources :server_info, only: [:index], defaults: { format: 'json' }
     end
 
     namespace :v2 do
@@ -18,7 +19,7 @@ KebabRemoteApi::Application.routes.draw do
     end
   end
 
-  match 'api/server_info', to: 'application#get_server_info', via: [:get]
+  #match 'api/server_info', to: 'application#get_server_info', via: [:get]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
