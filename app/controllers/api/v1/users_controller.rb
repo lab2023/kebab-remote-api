@@ -3,27 +3,12 @@ class Api::V1::UsersController < ApplicationController
   respond_to :json
 
   def index
-    users = User.all.count
-    admins = Admin.all.count
-
     render status: 200, json: {
-      "active_users" => User.with_block_status(:unblocked).count + admins,
-      "total_users"  => users + admins,
-      "total_user_by_role" => [
-          {
-            "role_name" => "Admin",
-            "count"     => admins
-          },
-          {
-            "role_name" => "User",
-            "count"     => users,
-          },
-          {
-            "role_name" => "Editor",
-            "count"     => User.with_role(:editor).count
-          }
-      ]       
-    }
+      'active_user' => User.with_block_status(:active).count,
+      'total_user'  => User.all.count,
+      'total_user_by_role' => User.role.values.map { |role| { "role_name" => role.to_s, 
+                                                  "count" => User.with_role(role).count } }
+    }.to_json
   end
 
   private

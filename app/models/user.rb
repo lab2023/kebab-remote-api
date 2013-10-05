@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
 
   enumerize :role, in: { admin: 1, user: 2, editor: 3 }, scope: true, default: :user
   enumerize :block_status, in: { active: 1, blocked: 2 }, scope: true, default: :active
-
   # Example creation of User with role
   # new_user = User.create(email: 'blabla@bla.com', password: '12345678', role: :user)
   #
