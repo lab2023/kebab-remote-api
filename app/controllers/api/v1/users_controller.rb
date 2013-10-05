@@ -1,4 +1,4 @@
-class Api::V2::UsersController < ApplicationController
+class Api::V1::UsersController < ApplicationController
   before_filter :restrict_access
   respond_to :json
 
