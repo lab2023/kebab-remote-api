@@ -8,7 +8,7 @@ class ServerInfo < ActiveRecord::Base
     total_mem = mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes
     # Getting disk info for main partition is, temprorarily, for only
     # UN*X-like systems, such as GNU/Linux, BSD, Mac OS X etc.
-    # Windows implementation will be added in future 
+    # Windows implementation will be added in future
     disk = Vmstat.disk('/')
     # CPU load data => Float typed
     self.cpu_load = Vmstat.load_average.five_minutes
