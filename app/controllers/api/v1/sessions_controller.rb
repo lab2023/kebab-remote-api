@@ -32,7 +32,7 @@ class Api::V1::SessionsController < ApplicationController
     unless @user.valid_password?(password)
       render status: 401, json: { message: t(:invalid_field) }
     else
-      render status: 200, json: @user.as_json
+      render status: 200, json: @user.as_json.merge(success: true)
     end
 
   end
