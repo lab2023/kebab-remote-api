@@ -29,7 +29,7 @@ class Api::V1::SessionsController < ApplicationController
     @user.ensure_authentication_token!
 
     # Finally, checking for password
-    if not @user.valid_password?(password)
+    unless @user.valid_password?(password)
       render status: 401, json: { message: t(:invalid_field) }
     else
       render status: 200, json: @user.as_json
