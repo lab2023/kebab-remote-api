@@ -18,8 +18,10 @@ class User < ActiveRecord::Base
   # Selecting all users with given role (A.K.A. scoping):
   # User.with_role(:editor)
   def as_json
-    { 'success' => true, 'id' => self.id,
-      'auth_token' => self.authentication_token,
-      'email' => self.email }.to_json
+    { 'success' => true,
+      id: id,
+      auth_token: authentication_token,
+      email: email
+    }.to_json
   end
 end
