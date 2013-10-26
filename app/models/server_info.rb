@@ -2,6 +2,7 @@ require 'vmstat'
 
 class ServerInfo < ActiveRecord::Base
   after_initialize :init
+  attr_accessor :cpu_load, :mem_total, :mem_used, :disk_total, :disk_used, :uptime
 
   def init
     mem = Vmstat.memory

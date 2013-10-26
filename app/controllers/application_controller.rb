@@ -1,7 +1,7 @@
 require 'application_responder'
 
 class ApplicationController < ActionController::Base
-  before_filter :set_user_time_zone
+  before_filter :set_user_time_zone, :authenticate_request
 
   self.responder = ApplicationResponder
   respond_to :html, :json
@@ -29,5 +29,10 @@ class ApplicationController < ActionController::Base
     else
       hq_dashboard_index_path
     end
+  end
+
+  def authenticate_request
+    user = User.find_by_authentication_token(params[:secret_token])
+    head :unauthorized unless user
   end
 end
