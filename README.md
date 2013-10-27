@@ -1,5 +1,7 @@
 # Kebab Remote API
 
+NOTE: Do not use this until v1.0.0
+
 ## Requirements
 
 Before mounting Kebab Remote API to your application, you will need:
