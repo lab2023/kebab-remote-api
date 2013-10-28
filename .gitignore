@@ -10,11 +10,14 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/test/dummy/db/*.sqlite3
 
 # Ignore  log
 /log/*.log
+/test/dummy/log
 
 /tmp
+/test/dummy/tmp
 !.keep
 *.swp
 .env
