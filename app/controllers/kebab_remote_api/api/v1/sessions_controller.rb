@@ -10,13 +10,13 @@ class Api::V1::SessionsController < KebabRemoteApi::ApplicationController
 
     # Checking whether format is json or not
 	    if request.format != :json
-      render status: 406, json: { message: t(:not_json) }
+      render status: 406, json: { message: I18n.t('kebab_remote_api.not_json') }
       return
     end
 
     # Checking for empty email or password
     if email.nil? or password.nil?
-      render status: 400, json: { message: t(:empty_input) }
+      render status: 400, json: { message: I18n.t('kebab_remote_api.empty_input') }
       return
     end
 
@@ -24,7 +24,7 @@ class Api::V1::SessionsController < KebabRemoteApi::ApplicationController
 
     # Checking whether user exists
     if @user.nil?
-      render status: 401, json: { message: t(:invalid_field) }
+      render status: 401, json: { message: I18n.t('kebab_remote_api.invalid_field') }
       return
     end
 
@@ -32,7 +32,7 @@ class Api::V1::SessionsController < KebabRemoteApi::ApplicationController
 
     # Finally, checking for password
     unless @user.valid_password?(password)
-      render status: 401, json: { message: t(:invalid_field) }
+      render status: 401, json: { message: I18n.t('kebab_remote_api.invalid_field') }
     else
       render status: 200, json: @user.as_json.merge(success: true)
     end
@@ -43,7 +43,7 @@ class Api::V1::SessionsController < KebabRemoteApi::ApplicationController
     @user = User.find_by_authentication_token(params[:id])
 
     if @user.nil?
-      render status: 404, json: { message: t(:invalid_token) }
+      render status: 404, json: { message: I18n.t('kebab_remote_api.invalid_token') }
     else
       @user.reset_authentication_token!
       render status: 200, json: { token: params[:id] }
