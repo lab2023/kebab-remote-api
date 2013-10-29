@@ -43,7 +43,7 @@ class Api::V1::SessionsController < KebabRemoteApi::ApplicationController
     @user = User.find_by_authentication_token(params[:id])
 
     if @user.nil?
-      render status: 404, json: { message: 'Invalid token.' }
+      render status: 404, json: { message: t(:invalid_token) }
     else
       @user.reset_authentication_token!
       render status: 200, json: { token: params[:id] }
