@@ -10,4 +10,5 @@ module KebabRemoteApi
                                                   "count" => User.with_role(role).count } }
     	}.to_json
   	end
+	end
 end
