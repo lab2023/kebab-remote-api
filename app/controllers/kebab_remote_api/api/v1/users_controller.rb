@@ -15,7 +15,7 @@ module KebabRemoteApi
   private
 
   	def restrict_access
-    	api_key = ApiKey.first#find_by_access_token(params[:access_token])
+    	api_key = ApiKey.first
     	head :unauthorized unless api_key
   	end
 	end
