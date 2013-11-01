@@ -1,6 +1,5 @@
 module KebabRemoteApi
 	class Api::V1::UsersController < KebabRemoteApi::ApplicationController
-  	before_filter :restrict_access
   	respond_to :json
 
 	  def index
@@ -11,12 +10,4 @@ module KebabRemoteApi
                                                   "count" => User.with_role(role).count } }
     	}.to_json
   	end
-
-  private
-
-  	def restrict_access
-    	api_key = ApiKey.first
-    	head :unauthorized unless api_key
-  	end
-	end
 end
