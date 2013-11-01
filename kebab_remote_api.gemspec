@@ -5,15 +5,17 @@ require "kebab_remote_api/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "kebab_remote_api"
-  s.version     = KebabRemoteApi::VERSION
-  s.authors     = ["Ahmet Sezgin Duran"]
-  s.email       = ["marjinalist1@gmail.com"]
-  s.homepage    = "https://github.com/kebab-project/kebab-remote-api"
-  s.summary     = "TODO: Summary of KebabRemoteApi."
-  s.description = "TODO: Description of KebabRemoteApi."
+  s.name        		 = "kebab_remote_api"
+  s.version     		 = KebabRemoteApi::VERSION
+  s.authors     		 = %w[lab2023]
+  s.email       		 = %w[info@lab2023.com]
+  s.homepage    		 = "https://github.com/kebab-project/kebab-remote-api"
+  s.summary     		 = "TODO: Summary of KebabRemoteApi."
+  s.description 		 = "TODO: Description of KebabRemoteApi."
+  s.license     		 = 'MIT'
+  s.extra_rdoc_files = %w[README.md CHANGELOG.md SECURITY.md]
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.0.0"
