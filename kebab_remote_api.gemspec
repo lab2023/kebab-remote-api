@@ -19,11 +19,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 4.0.0"
-  s.add_dependency 'pg', '~> 0.15.1'
+  s.add_dependency 'pg', '~> 0.16.0'
   s.add_dependency 'responders', '~> 1.0.0.rc'
   s.add_dependency 'rails_config', '~> 0.3.3'
   s.add_dependency 'devise', '~> 3.0.0'
-  s.add_dependency 'devise-i18n', '~> 0.8.6'
+  s.add_dependency 'devise-i18n', '~> 0.9.2'
   s.add_dependency 'enumerize', '~> 0.7.0'
   s.add_dependency 'vmstat', '~> 2.0.0'
 
@@ -44,5 +44,5 @@ Gem::Specification.new do |s|
   #s.add_dependency 'paperclip', '~> 3.5.1'
   #s.add_dependency 'kangal', '~> 0.1.2'
 
-  #s.add_development_dependency "sqlite3"
+  s.add_development_dependency "sqlite3"
 end
