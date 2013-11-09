@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
-		     :token_authenticatable
+         :recoverable, :rememberable, :trackable, :validatable
 
   enumerize :role, in: { admin: 1, user: 2, editor: 3 }, scope: true, default: :user
   enumerize :block_status, in: { active: 1, blocked: 2 }, scope: true, default: :active
@@ -17,10 +16,4 @@ class User < ActiveRecord::Base
   #
   # Selecting all users with given role (A.K.A. scoping):
   # User.with_role(:editor)
-  def as_json
-    { id: id,
-      auth_token: authentication_token,
-      email: email
-    }
-  end
 end

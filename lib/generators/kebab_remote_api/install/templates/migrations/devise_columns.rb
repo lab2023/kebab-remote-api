@@ -1,5 +1,5 @@
-class AddDeviseColumnsToUser < ActiveRecord::Migration
+class AddDeviseColumnsToAdmins < ActiveRecord::Migration
   def change
-    add_column :users, :authentication_token, :string
+    add_column :admins, :authentication_token, :string
   end
 end
