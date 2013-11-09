@@ -15,8 +15,9 @@ Gem::Specification.new do |s|
   s.license     		 = 'MIT'
   s.extra_rdoc_files = %w[README.md CHANGELOG.md SECURITY.md]
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
+  s.files = `git ls-files`.split($/)
+  s.test_files = s.files.grep(%r{^(test|spec|features)/})
+  s.require_paths = %w[lib]
 
   s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency 'pg', '~> 0.16.0'
