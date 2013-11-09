@@ -34,8 +34,8 @@ module KebabRemoteApi
   		end
 
   		def authenticate_request
-  			user = User.find_by_authentication_token(params[:secret_token])
-  			head :unauthorized unless user
+  			admin = Admin.find_by_authentication_token(params[:secret_token])
+  			head :unauthorized unless admin
   		end
 
   		def restrict_access

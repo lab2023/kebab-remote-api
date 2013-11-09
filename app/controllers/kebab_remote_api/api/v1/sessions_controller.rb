@@ -20,31 +20,31 @@ module KebabRemoteApi
       	return
     	end
 
-    	@user = User.where(email: email.downcase).first
+    	@admin = Admin.where(email: email.downcase).first
 
 	    # Checking whether user exists
-  	  if @user.nil?
+  	  if @admin.nil?
     	  render status: 401, json: { message: I18n.t('kebab_remote_api.invalid_field') }
       	return
 	    end
 
-  	  @user.ensure_authentication_token!
+  	  @admin.ensure_authentication_token!
 
     	# Finally, checking for password
-    	unless @user.valid_password?(password)
+    	unless @admin.valid_password?(password)
      	 render status: 401, json: { message: I18n.t('kebab_remote_api.invalid_field') }
     	else
-      	render status: 200, json: @user.as_json.merge(success: true)
+      	render status: 200, json: @admin.as_json.merge(success: true)
     	end
 	  end
 
   	def destroy
-    	@user = User.find_by_authentication_token(params[:id])
+    	@admin = Admin.find_by_authentication_token(params[:id])
 
-    	if @user.nil?
+    	if @admin.nil?
       	render status: 404, json: { message: I18n.t('kebab_remote_api.invalid_token') }
     	else
-      	@user.reset_authentication_token!
+      	@admin.reset_authentication_token!
       	render status: 200, json: { token: params[:id] }
     	end
   	end
