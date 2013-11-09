@@ -20,8 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
- kebab_remote_api:
-  not_json: 'Type of the request must be JSON'
-  empty_input: "The request must contain the user's email and password"
-  invalid_field: 'Invalid email or password'
-  invalid_token: 'Invalid token'
+  kebab_remote_api:
+    not_json: 'Type of the request must be JSON'
+    empty_input: "The request must contain the user's email and password"
+    invalid_field: 'Invalid email or password'

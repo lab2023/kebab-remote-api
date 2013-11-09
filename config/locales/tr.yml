@@ -22,7 +22,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 tr:
+ kebab_remote_api:
   not_json: 'İstek JSON tipinde olmalıdır.'
   empty_input: 'İstek kullanıcının e-postasını ve parolasını içermelidir.'
-  invalid_field: 'Yanlış e-posta veya parola'
-
+  invalid_field: 'Geçersiz e-posta veya parola'
+  invalid_field: 'Geçersiz token.'

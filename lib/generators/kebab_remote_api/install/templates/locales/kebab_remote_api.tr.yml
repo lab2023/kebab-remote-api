@@ -1,3 +1,5 @@
+# encoding: utf-8
+#
 # Files in the config/locales directory are used for internationalization
 # and are automatically loaded by Rails. If you want to use locales other
 # than English, add the necessary files in this directory.
@@ -19,9 +21,9 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
- kebab_remote_api:
-  not_json: 'Type of the request must be JSON'
-  empty_input: "The request must contain the user's email and password"
-  invalid_field: 'Invalid email or password'
-  invalid_token: 'Invalid token'
+tr:
+  kebab_remote_api:
+    not_json: 'İstek JSON tipinde olmalıdır.'
+    empty_input: 'İstek kullanıcının e-postasını ve parolasını içermelidir.'
+    invalid_field: 'Yanlış e-posta veya parola'
+
