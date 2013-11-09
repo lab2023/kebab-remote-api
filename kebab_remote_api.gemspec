@@ -10,12 +10,12 @@ Gem::Specification.new do |s|
   s.authors     		 = %w[lab2023]
   s.email       		 = %w[info@lab2023.com]
   s.homepage    		 = "https://github.com/kebab-project/kebab-remote-api"
-  s.summary     		 = "TODO: Summary of KebabRemoteApi."
-  s.description 		 = "TODO: Description of KebabRemoteApi."
+  s.summary     		 = %q{This is a JSON data sender gem for a Cybele initialized Rails project.}
+  s.description 		 = %q{Kebab Remote API is a gem that sends spesific server data through JSON.}
   s.license     		 = 'MIT'
-  s.extra_rdoc_files = %w[README.md CHANGELOG.md SECURITY.md]
+  s.extra_rdoc_files = %w[README.md SECURITY.md]
 
-  s.files = `git ls-files`.split($/)
+  s.files = `git ls-files`.split("\n")
   s.test_files = s.files.grep(%r{^(test|spec|features)/})
   s.require_paths = %w[lib]
 
