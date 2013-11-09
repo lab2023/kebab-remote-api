@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable,
+         :recoverable, :rememberable, :trackable, :validatable
 
   enumerize :role, in: { admin: 1, user: 2, editor: 3 }, scope: true, default: :user
   enumerize :block_status, in: { active: 1, blocked: 2 }, scope: true, default: :active

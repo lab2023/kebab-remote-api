@@ -39,12 +39,12 @@ module KebabRemoteApi
 	  end
 
   	def destroy
-    	@user = Admin.find_by_authentication_token(params[:id])
+    	@admin = Admin.find_by_authentication_token(params[:id])
 
-    	if @user.nil?
+    	if @admin.nil?
       	render status: 404, json: { message: I18n.t('kebab_remote_api.invalid_token') }
     	else
-      	@user.reset_authentication_token!
+      	@admin.reset_authentication_token!
       	render status: 200, json: { token: params[:id] }
     	end
   	end
