@@ -4,7 +4,7 @@ class Admin < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, 
          :recoverable, :rememberable, :trackable, :validatable,
-         :token_authenticable
+         :token_authenticatable
   
   def as_json
     { id: id,
