@@ -1,7 +1,36 @@
 
 #### [Current]
+ * [54aa382](../../commit/54aa382) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove locales
+ * [3b965d0](../../commit/3b965d0) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove migrations
+ * [833e586](../../commit/833e586) - __(Ahmet Sezgin Duran)__ Bump version
+ * [4da1db0](../../commit/4da1db0) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove unnecessary files
+ * [261f3f5](../../commit/261f3f5) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove test files and dummy app
+ * [90ddf6c](../../commit/90ddf6c) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Update summary and description fields
+ * [cc97ec8](../../commit/cc97ec8) - __(Ahmet Sezgin Duran)__ Update gemspec file
+ * [913be44](../../commit/913be44) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Copy namespaced translations
+ * [cbd20fb](../../commit/cbd20fb) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Copy migrations with install generator
+ * [c2c692e](../../commit/c2c692e) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Create install generator and copy method
+ * [8b2bf4a](../../commit/8b2bf4a) - __(Ahmet Sezgin Duran)__ Fix Gemnasium badge
+ * [937a9c9](../../commit/937a9c9) - __(Ahmet Sezgin Duran)__ Add Gemnasium badge
+ * [d25af54](../../commit/d25af54) - __(Ahmet Sezgin Duran)__ Add Code Climate badge
+ * [857a554](../../commit/857a554) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Install Devise
+ * [b2712dd](../../commit/b2712dd) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Update gemspec for extra info
+ * [4a53628](../../commit/4a53628) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Handle syntax error
+ * [7334bb5](../../commit/7334bb5) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Move restrict_access method to application controller
+ * [33d500f](../../commit/33d500f) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove unused gems
+ * [f4aa074](../../commit/f4aa074) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Add namespace to I18n
+ * [8cb7765](../../commit/8cb7765) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Migrate translations from application
+ * [65d7a3b](../../commit/65d7a3b) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Migrate controllers from application
+ * [79cdabf](../../commit/79cdabf) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Add migrations
+ * [5f8767d](../../commit/5f8767d) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Add basic gems and ready up Devise
+ * [ce89714](../../commit/ce89714) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Update .gitignore to ignore dummy test app files
+ * [6ae78aa](../../commit/6ae78aa) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Change engine mount route to remote
+ * [5134e04](../../commit/5134e04) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Create new mountable engine
+ * [4611d31](../../commit/4611d31) - __(Ahmet Sezgin Duran)__ Remove everthing
+ * [acb2d3d](../../commit/acb2d3d) - __(Ahmet Sezgin Duran)__ [#9](../../issues/9) Add version warning
 
-#### 
+#### 0.1.0
+ * [1c78ce4](../../commit/1c78ce4) - __(Ahmet Sezgin Duran)__ Bump version 0.1.0
  * [206e33c](../../commit/206e33c) - __(Ahmet Sezgin Duran)__ [#9](../../issues/9) Fix wrong app name in Readme.md
  * [2595e08](../../commit/2595e08) - __(Ahmet Sezgin Duran)__ [#9](../../issues/9) Update Readme.md and and license file
  * [cd91c5b](../../commit/cd91c5b) - __(Ahmet Sezgin Duran)__ [#10](../../issues/10) Authenticate every request except session requests
