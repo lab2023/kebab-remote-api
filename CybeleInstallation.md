@@ -18,10 +18,11 @@ Initialize a Rails application with Cybele:
 cybele foobar
 ```
 
-Edit foobar's Gemfile:
+Switch to foobar folder and edit foobar's Gemfile:
 
 ```
-nano foobar/Gemfile
+cd foobar
+nano Gemfile
 ```   
 
 Add the line:
