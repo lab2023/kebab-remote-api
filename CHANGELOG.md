@@ -1,5 +1,20 @@
 
 #### [Current]
+ * [18facb0](../../commit/18facb0) - __(Ahmet Sezgin Duran)__ Clean up application controller
+ * [8316731](../../commit/8316731) - __(Ahmet Sezgin Duran)__ Remove unnecessary gems
+ * [4d7db82](../../commit/4d7db82) - __(Ahmet Sezgin Duran)__ Fix CybeleInstallation tutorial
+ * [9d7c1fe](../../commit/9d7c1fe) - __(Ahmet Sezgin Duran)__ Add Cybele installation tutorial
+
+#### 0.2.1
+ * [a64aad8](../../commit/a64aad8) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Fix admin variables in controllers
+ * [2b1430b](../../commit/2b1430b) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Fix up generator and migration
+ * [221c566](../../commit/221c566) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Fix model attributes
+ * [f0d709c](../../commit/f0d709c) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Modify migration for admin's auth token
+ * [f869b9a](../../commit/f869b9a) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Create admin model and clean up user model
+ * [1711214](../../commit/1711214) - __(Ahmet Sezgin Duran)__ [#12](../../issues/12) Modify session controller and bump version
+
+#### 0.2.0
+ * [0fc4faa](../../commit/0fc4faa) - __(Ahmet Sezgin Duran)__ Bump version 0.2.0
  * [54aa382](../../commit/54aa382) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove locales
  * [3b965d0](../../commit/3b965d0) - __(Ahmet Sezgin Duran)__ [#7](../../issues/7) Remove migrations
  * [833e586](../../commit/833e586) - __(Ahmet Sezgin Duran)__ Bump version
