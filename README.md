@@ -3,9 +3,6 @@
 [![Code Climate](https://codeclimate.com/github/kebab-project/kebab-remote-api.png)](https://codeclimate.com/github/kebab-project/kebab-remote-api)
 [![Dependency Status](https://gemnasium.com/kebab-project/kebab-remote-api.png)](https://gemnasium.com/kebab-project/kebab-remote-api)
 
-
-NOTE: Do not use this until v1.0.0
-
 ## Requirements
 
 Before mounting Kebab Remote API to your application, you will need:
