@@ -20,14 +20,13 @@ Gem::Specification.new do |s|
   s.require_paths = %w[lib]
 
   s.add_dependency "rails", "~> 4.0.0"
-  s.add_dependency 'pg', '~> 0.16.0'
-  s.add_dependency 'responders', '~> 1.0.0.rc'
-  s.add_dependency 'rails_config', '~> 0.3.3'
-  s.add_dependency 'devise', '~> 3.0.0'
-  s.add_dependency 'devise-i18n', '~> 0.9.2'
   s.add_dependency 'enumerize', '~> 0.7.0'
   s.add_dependency 'vmstat', '~> 2.0.0'
-
+  #s.add_dependency 'pg', '~> 0.16.0'
+  #s.add_dependency 'responders', '~> 1.0.0.rc'
+  #s.add_dependency 'rails_config', '~> 0.3.3'
+  #s.add_dependency 'devise', '~> 3.0.0'
+  #s.add_dependency 'devise-i18n', '~> 0.9.2'
   #s.add_dependency 'sass-rails', '~> 4.0.0'
   #s.add_dependency 'uglifier', '>= 1.3.0'
   #s.add_dependency 'coffee-rails', '~> 4.0.0'

@@ -1,10 +1,5 @@
 KebabRemoteApi::Engine.routes.draw do
 
-	devise_for :users, {
-    class_name: 'User',
-    module: :devise
-  }
-
 	namespace :api do
 
 		namespace :v1 do
