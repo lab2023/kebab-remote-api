@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0.0"
   s.add_dependency 'enumerize', '~> 0.7.0'
-  s.add_dependency 'vmstat', '~> 2.0.0'
+  s.add_dependency 'vmstat', '~> 2.1.0'
 
   s.add_development_dependency "sqlite3"
 end

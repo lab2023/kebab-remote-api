@@ -6,7 +6,6 @@ class ServerInfo < ActiveRecord::Base
 
   def init
     mem = Vmstat.memory
-    total_mem = mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes
     # Getting disk info for main partition is, temprorarily, for only
     # UN*X-like systems, such as GNU/Linux, BSD, Mac OS X etc.
     # Windows implementation will be added in future
@@ -14,8 +13,8 @@ class ServerInfo < ActiveRecord::Base
     # CPU load data => Float typed
     self.cpu_load = Vmstat.load_average.five_minutes
     # All size data => Megabytes (MB)
-    self.mem_total = (mem.active_bytes + mem.inactive_bytes + mem.free_bytes + mem.wired_bytes) / 1024**2
-    self.mem_used = self.mem_total - (mem.free_bytes / 1024**2)
+    self.mem_total = mem.total_bytes / 1024**2
+    self.mem_used = (mem.total_bytes - mem.free_bytes) / 1024**2
     self.disk_total = disk.total_bytes / 1024**2
     self.disk_used = (disk.total_bytes - disk.free_bytes) / 1024**2
     # Uptime data => Minutes
