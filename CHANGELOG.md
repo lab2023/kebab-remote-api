@@ -1,5 +1,10 @@
 
 #### [Current]
+ * [deaa841](../../commit/deaa841) - __(Ahmet Sezgin Duran)__ Reduce complexity of server info init method
+ * [569cccd](../../commit/569cccd) - __(Ahmet Sezgin Duran)__ Fix tab-spaces
+
+#### 1.0.0
+ * [b7935db](../../commit/b7935db) - __(Ahmet Sezgin Duran)__ [#8](../../issues/8) Get ready for gem publish
  * [18facb0](../../commit/18facb0) - __(Ahmet Sezgin Duran)__ Clean up application controller
  * [8316731](../../commit/8316731) - __(Ahmet Sezgin Duran)__ Remove unnecessary gems
  * [4d7db82](../../commit/4d7db82) - __(Ahmet Sezgin Duran)__ Fix CybeleInstallation tutorial
