@@ -33,9 +33,9 @@ Once you've made your great commits:
 
 ## Credits
 
-- Kebab Remote API is maintained and funded by [lab2023 - internet technologies](http://lab2023.com/)
+- Kebab Remote API is maintained and funded by [lab2023 - information technologies](http://lab2023.com/)
 - The names and logos for lab2023 are trademarks of lab2023, inc.
 
 ## License
 
-Copyright 2012 lab2023 – internet technologies
+Copyright 2014 lab2023 – information technologies
